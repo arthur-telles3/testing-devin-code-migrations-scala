@@ -1,4 +1,4 @@
-package subdomains.domainA
+package platform.domainA
 
 import org.apache.spark.sql.{DataFrame, SparkSession}
 import platform.common_classes.{SubdomainOp, Input}
