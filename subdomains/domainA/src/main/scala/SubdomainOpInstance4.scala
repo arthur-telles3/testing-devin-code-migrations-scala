@@ -1,8 +1,8 @@
 package subdomains.domainA
 import org.apache.spark.sql.SparkSession
-
-import subdomains.utils.{Metadata, RunConfigurations, SubdomainOp}
+import platform.common_classes.SubdomainOp
 import org.apache.spark.sql.DataFrame
+import subdomains.utils.{Metadata, RunConfigurations}
 
 object SubdomainOpInstance4 extends SubdomainOp {
   val hardcodedValue: Int = 3921 // Previously randomValue
