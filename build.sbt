@@ -80,8 +80,19 @@ lazy val domainE = (project in file("subdomains/domain-E"))
   )
   .dependsOn(commonClasses, utils)
 
+lazy val app = (project in file("subdomains/app"))
+  .settings(
+    name := "Application",
+    libraryDependencies ++= Seq(
+      "org.scalatest" %% "scalatest" % "3.2.9" % Test,
+      "org.apache.spark" %% "spark-core" % "3.5.1" % Provided,
+      "org.apache.spark" %% "spark-sql" % "3.5.1" % Provided
+    )
+  )
+  .dependsOn(domainA, domainB, domainC, domainD, domainE)
+
 lazy val root = (project in file("."))
-  .aggregate(commonClasses, domainA, domainB, domainC, domainD, domainE, utils)
+  .aggregate(commonClasses, domainA, domainB, domainC, domainD, domainE, utils, app)
   .dependsOn(commonClasses, utils)
   .settings(
     name := "Testing Devin Code Migrations Scala",
