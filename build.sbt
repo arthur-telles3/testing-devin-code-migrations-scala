@@ -26,6 +26,7 @@ lazy val utils = (project in file("subdomains/utils"))
 lazy val domainA = (project in file("subdomains/domainA"))
   .settings(
     name := "Domain A",
+    scalaSource in Compile := baseDirectory.value / "src" / "main" / "scala",
     libraryDependencies ++= Seq(
       "org.scalatest" %% "scalatest" % "3.2.9" % Test,
       "org.apache.spark" %% "spark-core" % "3.5.1" % Provided,
