@@ -1,25 +1,18 @@
-package legacy
+package subdomains.domainB
+
 import org.apache.spark.sql.SparkSession
-
-import platform.common_classes.SparkOp
 import org.apache.spark.sql.DataFrame
-import platform.common_classes.Metadata
-import platform.common_classes.RunConfigurations
+import platform.common_classes.{SubdomainOp, Input, Metadata, RunConfigurations}
 
-object SparkOpInstance7 extends SparkOp {
-  val randomValue: Int = 1357 // Hardcoded random value
+object SubdomainOpInstanceBPrevious extends SubdomainOp {
+  val randomValue: Int = 1357 // Previously hardcoded random value, now centralized
 
-  override def name: String = "nu-br/dataset/spark-op-instance-7"
-  override def inputs: Set[String] = Set(SparkOpInstance6.name) // Reference to SparkOpInstance6 as an input using object name
+  override def name: String = "subdomain-op-instance-B-previous"
+  override def inputs: Set[Input] = Set() // No inputs, making it a root
   override def query(inputs: Map[String, DataFrame]): DataFrame = {
-    // Using randomValue from SparkOpInstance6 as instructed
-    val _ = SparkOpInstance6.randomValue
+    // Implementation for SubdomainOpInstanceBPrevious
     SparkSession.builder().getOrCreate().emptyDataFrame
   }
-  override def metadata: Metadata = {
-    new Metadata()
-  }
-  override def runConfigurations: RunConfigurations = {
-    new RunConfigurations()
-  }
+  override def metadata: Metadata = new Metadata()
+  override def runConfigurations: RunConfigurations = new RunConfigurations()
 }
