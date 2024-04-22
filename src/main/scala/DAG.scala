@@ -1,13 +1,15 @@
 import platform.common_classes.SubdomainOp
 import subdomains.domainA.SubdomainOpInstanceA
+import subdomains.domainB.SubdomainOpInstanceBPrevious
+import subdomains.domainB.SubdomainOpInstanceB
 
 object DAG {
   val ops: Set[SubdomainOp] = Set(
-    // Assuming all legacy SparkOp instances have been migrated to SubdomainOp instances
-    // and are located in their respective domain packages
+    // Instances from domain A
     SubdomainOpInstanceA,
-    subdomains.domainB.SubdomainOpInstanceBPrevious,
-    subdomains.domainB.SubdomainOpInstanceB,
-    // ... other SubdomainOp instances from domains C, D, E, and any other migrated SparkOp instances
+    // Instances from domain B
+    SubdomainOpInstanceBPrevious,
+    SubdomainOpInstanceB
+    // ... any other migrated SparkOp instances
   )
 }

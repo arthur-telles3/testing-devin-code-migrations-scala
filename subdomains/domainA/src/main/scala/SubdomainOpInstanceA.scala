@@ -7,7 +7,7 @@ import platform.common_classes.{Input, Metadata, RunConfigurations}
 
 object SubdomainOpInstanceA extends platform.common_classes.SubdomainOp {
   override def name: String = "subdomain-op-instance-A"
-  override def inputs: Set[Input] = Set(Input("dataset/spark-op-instance-A")) // This should be updated based on actual dependencies
+  override def inputs: Set[Input] = Set() // No inputs as this is a root operation
   override def query(inputs: Map[String, DataFrame]): DataFrame = {
     // Example query using SparkSession, this should be replaced with actual implementation
     SparkSession.builder().getOrCreate().emptyDataFrame
