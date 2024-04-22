@@ -36,7 +36,7 @@ lazy val domainA = (project in file("subdomains/domainA"))
   )
   .dependsOn(commonClasses, utils)
 
-lazy val domainB = (project in file("subdomains/domain-B"))
+lazy val domainB = (project in file("platform/domainB"))
   .settings(
     name := "Domain B",
     libraryDependencies ++= Seq(
@@ -47,7 +47,7 @@ lazy val domainB = (project in file("subdomains/domain-B"))
   )
   .dependsOn(commonClasses, utils)
 
-lazy val domainC = (project in file("subdomains/domain-C"))
+lazy val domainC = (project in file("platform/domainC"))
   .settings(
     name := "Domain C",
     libraryDependencies ++= Seq(
@@ -58,7 +58,7 @@ lazy val domainC = (project in file("subdomains/domain-C"))
   )
   .dependsOn(commonClasses, utils)
 
-lazy val domainD = (project in file("subdomains/domain-D"))
+lazy val domainD = (project in file("platform/domainD"))
   .settings(
     name := "Domain D",
     libraryDependencies ++= Seq(
@@ -69,7 +69,7 @@ lazy val domainD = (project in file("subdomains/domain-D"))
   )
   .dependsOn(commonClasses, utils)
 
-lazy val domainE = (project in file("subdomains/domain-E"))
+lazy val domainE = (project in file("platform/domainE"))
   .settings(
     name := "Domain E",
     libraryDependencies ++= Seq(
