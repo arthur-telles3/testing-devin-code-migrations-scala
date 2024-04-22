@@ -1,9 +1,14 @@
+package subdomains.app
+
 import subdomains.utils.SubdomainOp
 import subdomains.domainA._
 import subdomains.domainB._
 import subdomains.domainC._
 import subdomains.domainD._
 import subdomains.domainE._
+import org.apache.spark.sql.DataFrame
+import org.apache.spark.sql.SparkSession
+import platform.common_classes.Input
 
 object DAG {
   val ops: Set[SubdomainOp] = Set(
