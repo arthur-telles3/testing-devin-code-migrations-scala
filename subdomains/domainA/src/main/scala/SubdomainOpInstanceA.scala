@@ -1,9 +1,9 @@
 package subdomains.domainA
 
-import subdomains.utils.SharedRandomValues
+import subdomains.utils.{Metadata, RunConfigurations}
 import org.apache.spark.sql.DataFrame
 import org.apache.spark.sql.SparkSession
-import platform.common_classes.{Input, Metadata, RunConfigurations}
+import platform.common_classes.Input
 
 object SubdomainOpInstanceA extends platform.common_classes.SubdomainOp {
   override def name: String = "subdomain-op-instance-A"
