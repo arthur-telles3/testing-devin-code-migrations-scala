@@ -7,7 +7,5 @@ object SubdomainOpInstance9 extends SubdomainOp {
   override def name: String = "SubdomainOpInstance9"
   override def metadata: Metadata = new Metadata()
   override def runConfigurations: RunConfigurations = new RunConfigurations()
-  override def execute(): Unit = {
-    // Implementation remains the same as the original SparkOpInstance9
-  }
+  // Removed the execute method as it does not override any method in the SubdomainOp trait
 }
