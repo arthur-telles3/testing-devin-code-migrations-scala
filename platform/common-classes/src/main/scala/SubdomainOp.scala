@@ -1,6 +1,7 @@
 package platform.common_classes
 
 import org.apache.spark.sql.DataFrame
+import subdomains.utils.{RunConfigurations, Metadata}
 
 trait SubdomainOp {
   def name: String
