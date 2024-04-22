@@ -1,8 +1,5 @@
 import subdomains.utils.SubdomainOp
-import subdomains.domainA.SubdomainOpInstance1
-import subdomains.domainA.SubdomainOpInstance2
-import subdomains.domainA.SubdomainOpInstance3
-import subdomains.domainA.SubdomainOpInstance4
+import subdomains.domainA._
 import subdomains.domainB.SubdomainOpInstance5
 import subdomains.domainB.SubdomainOpInstance6
 import subdomains.domainB.SubdomainOpInstance7
