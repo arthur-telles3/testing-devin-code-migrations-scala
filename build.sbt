@@ -14,6 +14,7 @@ lazy val commonClasses = (project in file("platform/common-classes"))
       "org.apache.spark" %% "spark-sql" % "3.5.1" % Provided
     )
   )
+  .dependsOn(utils)
 
 lazy val utils = (project in file("subdomains/utils"))
   .settings(
