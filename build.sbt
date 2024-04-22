@@ -36,11 +36,52 @@ lazy val domainA = (project in file("subdomains/domainA"))
   )
   .dependsOn(commonClasses, utils)
 
-// Additional domain projects would be defined similarly to domainA
-// and would also depend on commonClasses and utils.
+lazy val domainB = (project in file("subdomains/domain-B"))
+  .settings(
+    name := "Domain B",
+    libraryDependencies ++= Seq(
+      "org.scalatest" %% "scalatest" % "3.2.9" % Test,
+      "org.apache.spark" %% "spark-core" % "3.5.1" % Provided,
+      "org.apache.spark" %% "spark-sql" % "3.5.1" % Provided
+    )
+  )
+  .dependsOn(commonClasses, utils)
+
+lazy val domainC = (project in file("subdomains/domain-C"))
+  .settings(
+    name := "Domain C",
+    libraryDependencies ++= Seq(
+      "org.scalatest" %% "scalatest" % "3.2.9" % Test,
+      "org.apache.spark" %% "spark-core" % "3.5.1" % Provided,
+      "org.apache.spark" %% "spark-sql" % "3.5.1" % Provided
+    )
+  )
+  .dependsOn(commonClasses, utils)
+
+lazy val domainD = (project in file("subdomains/domain-D"))
+  .settings(
+    name := "Domain D",
+    libraryDependencies ++= Seq(
+      "org.scalatest" %% "scalatest" % "3.2.9" % Test,
+      "org.apache.spark" %% "spark-core" % "3.5.1" % Provided,
+      "org.apache.spark" %% "spark-sql" % "3.5.1" % Provided
+    )
+  )
+  .dependsOn(commonClasses, utils)
+
+lazy val domainE = (project in file("subdomains/domain-E"))
+  .settings(
+    name := "Domain E",
+    libraryDependencies ++= Seq(
+      "org.scalatest" %% "scalatest" % "3.2.9" % Test,
+      "org.apache.spark" %% "spark-core" % "3.5.1" % Provided,
+      "org.apache.spark" %% "spark-sql" % "3.5.1" % Provided
+    )
+  )
+  .dependsOn(commonClasses, utils)
 
 lazy val root = (project in file("."))
-  .aggregate(commonClasses, domainA, utils) // Include all domain projects and utils in the aggregation
+  .aggregate(commonClasses, domainA, domainB, domainC, domainD, domainE, utils)
   .dependsOn(commonClasses, utils)
   .settings(
     name := "Testing Devin Code Migrations Scala",
