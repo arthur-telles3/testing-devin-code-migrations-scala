@@ -1,4 +1,4 @@
-package platform.common_classes
+package subdomains.utils
 
 class Metadata {
   // Placeholder for Metadata implementation
