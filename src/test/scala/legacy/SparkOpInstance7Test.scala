@@ -1,9 +1,9 @@
 import org.scalatest.funsuite.AnyFunSuite
-import legacy.SparkOpInstance7
+import subdomains.domainB.SubdomainOpInstanceBPrevious
 
-class SparkOpInstance7Test extends AnyFunSuite {
-  test("SparkOpInstance7: name should be nu-br/dataset/spark-op-instance-7") {
-    assert(SparkOpInstance7.name == "nu-br/dataset/spark-op-instance-7")
+class SubdomainOpInstanceBPreviousTest extends AnyFunSuite {
+  test("SubdomainOpInstanceBPrevious: name should be subdomain-op-instance-B-previous") {
+    assert(SubdomainOpInstanceBPrevious.name == "subdomain-op-instance-B-previous")
   }
 
   // Additional tests for inputs, query, metadata, and runConfigurations can be added here
