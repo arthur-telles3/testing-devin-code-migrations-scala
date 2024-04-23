@@ -46,7 +46,7 @@ lazy val domainB = (project in file("subdomains/domainB"))
       "org.apache.spark" %% "spark-core" % "3.5.1" % Provided,
       "org.apache.spark" %% "spark-sql" % "3.5.1" % Provided
     ),
-    Test / classLoaderLayeringStrategy := ClassLoaderLayeringStrategy.Flat,
+    Test / classLoaderLayeringStrategy := ClassLoaderLayeringStrategy.AllLibraryJars,
   )
   .dependsOn(commonClasses, utils)
 
