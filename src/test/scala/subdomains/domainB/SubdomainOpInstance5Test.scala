@@ -1,3 +1,5 @@
+package subdomains.domainB
+
 import org.scalatest.funsuite.AnyFunSuite
 import subdomains.domainB.SubdomainOpInstance5
 
