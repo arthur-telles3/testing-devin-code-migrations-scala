@@ -1,8 +1,8 @@
 import munit.FunSuite
 import subdomains.utils._
 import subdomains.domainA.{SubdomainOpInstance1, SubdomainOpInstance2, SubdomainOpInstance3, SubdomainOpInstance4}
-import subdomains.domainB.{SubdomainOpInstance5, SubdomainOpInstance6, SubdomainOpInstance7, SubdomainOpInstance8}
-import subdomains.domainC.{SubdomainOpInstance9, SubdomainOpInstance10, SubdomainOpInstance11, SubdomainOpInstance12}
+import subdomains.domainB.{SubdomainOpInstance7, SubdomainOpInstance8}
+import subdomains.domainC.{SubdomainOpInstance5, SubdomainOpInstance6, SubdomainOpInstance9, SubdomainOpInstance10, SubdomainOpInstance11, SubdomainOpInstance12}
 import subdomains.domainD.{SubdomainOpInstance13, SubdomainOpInstance14, SubdomainOpInstance15, SubdomainOpInstance16}
 import subdomains.domainE.{SubdomainOpInstance17, SubdomainOpInstance18, SubdomainOpInstance19, SubdomainOpInstance20}
 
@@ -13,18 +13,23 @@ class DAGConfigurationSpec extends FunSuite {
     SubdomainOpInstance2,
     SubdomainOpInstance3,
     SubdomainOpInstance4,
+    // Instances from domain C
     SubdomainOpInstance5,
     SubdomainOpInstance6,
+    // Instances from domain B
     SubdomainOpInstance7,
     SubdomainOpInstance8,
+    // Instances from domain C
     SubdomainOpInstance9,
     SubdomainOpInstance10,
     SubdomainOpInstance11,
     SubdomainOpInstance12,
+    // Instances from domain D
     SubdomainOpInstance13,
     SubdomainOpInstance14,
     SubdomainOpInstance15,
     SubdomainOpInstance16,
+    // Instances from domain E
     SubdomainOpInstance17,
     SubdomainOpInstance18,
     SubdomainOpInstance19,
