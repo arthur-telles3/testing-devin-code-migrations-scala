@@ -1,16 +1,16 @@
 package subdomains.domainC
 
-import subdomains.utils.{SubdomainOp, Metadata, RunConfigurations}
+import subdomains.utils.{Metadata, RunConfigurations}
+import platform.common_classes.{SubdomainOp, Input}
 import org.apache.spark.sql.DataFrame
-import org.apache.spark.sql.SparkSession
 
 object SubdomainOpInstance9 extends SubdomainOp {
-  override def name: String = "subdomainC-op-instance-9"
-  override def inputs: Set[String] = Set() // Assuming no inputs as this is a root operation
+  override def name: String = "SubdomainOpInstance9"
+  override def metadata: Metadata = new Metadata()
+  override def runConfigurations: RunConfigurations = new RunConfigurations()
+  override def inputs: Set[Input] = Set(new Input("SubdomainOpInstance8"))
   override def query(inputs: Map[String, DataFrame]): DataFrame = {
-    // Placeholder for the actual query logic
-    SparkSession.builder().getOrCreate().emptyDataFrame
+    // Placeholder for the actual query implementation
+    ???
   }
-  override def metadata: Metadata = Metadata.apply() // Updated to use apply method
-  override def runConfigurations: RunConfigurations = RunConfigurations.apply() // Updated to use apply method
 }
