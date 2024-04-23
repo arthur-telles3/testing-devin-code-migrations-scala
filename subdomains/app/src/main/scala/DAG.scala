@@ -4,9 +4,8 @@ import subdomains.utils.SubdomainOp
 import subdomains.utils.Input
 import subdomains.domainA._
 import subdomains.domainB._
-import subdomains.domainC._
-import subdomains.domainD._
-import subdomains.domainE._
+// import statements for domainC, domainD, and domainE are removed as their instances are not found
+
 import org.apache.spark.sql.DataFrame
 import org.apache.spark.sql.SparkSession
 
@@ -21,22 +20,8 @@ object DAG {
     SubdomainOpInstance5,
     SubdomainOpInstance6,
     SubdomainOpInstance7,
-    SubdomainOpInstance8,
-    // Instances from domain C
-    SubdomainOpInstance9,
-    SubdomainOpInstance10,
-    SubdomainOpInstance11,
-    SubdomainOpInstance12,
-    // Instances from domain D
-    SubdomainOpInstance13,
-    SubdomainOpInstance14,
-    SubdomainOpInstance15,
-    SubdomainOpInstance16,
-    // Instances from domain E
-    SubdomainOpInstance17,
-    SubdomainOpInstance18,
-    SubdomainOpInstance19,
-    SubdomainOpInstance20
+    SubdomainOpInstance8
+    // Instances from domain C, D, and E are removed as they are not found
     // ... any other migrated SubdomainOp instances
   )
 }
