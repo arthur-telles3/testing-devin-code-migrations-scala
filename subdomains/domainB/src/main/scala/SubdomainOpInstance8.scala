@@ -2,7 +2,7 @@ package subdomains.domainB
 import org.apache.spark.sql.{DataFrame, SparkSession}
 import subdomains.utils.{SubdomainOp, Metadata, RunConfigurations}
 
-class SubdomainOpInstance8 extends SubdomainOp {
+object SubdomainOpInstance8 extends SubdomainOp {
   val hardcodedValue: Int = 8673 // Previously randomValue
 
   override def name: String = "SubdomainOpInstance8"
