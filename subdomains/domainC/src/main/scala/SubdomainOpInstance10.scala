@@ -1,7 +1,7 @@
 package subdomains.domainC
 
 import subdomains.utils.{Metadata, RunConfigurations}
-import platform.common_classes.{SubdomainOp, Input}
+import subdomains.utils.{SubdomainOp, Input}
 import org.apache.spark.sql.DataFrame
 
 object SubdomainOpInstance10 extends SubdomainOp {
