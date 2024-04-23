@@ -1,14 +1,15 @@
-package platform.common_classes
+package subdomains.utils
 
 import org.apache.spark.sql.DataFrame
-import subdomains.utils.{RunConfigurations, Metadata}
 
 trait SubdomainOp {
   def name: String
   def query(inputs: Map[String, DataFrame]): DataFrame
   def metadata: Metadata
   def runConfigurations: RunConfigurations
-  def inputs: Set[Input]
+  def inputs: Set[String]
 }
 
-case class Input(name: String)
+case class Metadata()
+
+case class RunConfigurations()

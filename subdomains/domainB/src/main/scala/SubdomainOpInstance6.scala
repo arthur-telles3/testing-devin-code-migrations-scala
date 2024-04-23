@@ -12,12 +12,6 @@ object SubdomainOpInstance6 extends SubdomainOp {
     // Direct reference to SubdomainOpInstance5 removed
     SparkSession.builder().getOrCreate().emptyDataFrame
   }
-  override def metadata: Metadata = {
-    // Mock implementation for metadata
-    new Metadata()
-  }
-  override def runConfigurations: RunConfigurations = {
-    // Mock implementation for runConfigurations
-    new RunConfigurations()
-  }
+  override def metadata: Metadata = new Metadata()
+  override def runConfigurations: RunConfigurations = new RunConfigurations()
 }
