@@ -1,6 +1,6 @@
 package subdomains.domainE
 
-import platform.common_classes.SubdomainOp
+import subdomains.utils.{SubdomainOp, Metadata, RunConfigurations}
 import org.apache.spark.sql.DataFrame
 import org.apache.spark.sql.SparkSession
 
