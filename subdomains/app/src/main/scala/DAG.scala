@@ -17,10 +17,10 @@ object DAG {
     SubdomainOpInstance3,
     SubdomainOpInstance4,
     // Instances from domain B
-    new SubdomainOpInstance5(),
-    new SubdomainOpInstance6(),
-    new SubdomainOpInstance7(),
-    new SubdomainOpInstance8()
+    SubdomainOpInstance5,
+    SubdomainOpInstance6,
+    SubdomainOpInstance7,
+    SubdomainOpInstance8
     // Instances from domain C, D, and E are removed as they are not found
     // ... any other migrated SubdomainOp instances
   )
