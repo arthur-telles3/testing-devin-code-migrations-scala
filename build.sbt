@@ -63,6 +63,9 @@ lazy val domainC = (project in file("subdomains/domainC"))
       "org.apache.spark" %% "spark-core" % "3.5.1" % Provided,
       "org.apache.spark" %% "spark-sql" % "3.5.1" % Provided
     ),
+    Test / classLoaderLayeringStrategy := ClassLoaderLayeringStrategy.AllLibraryJars,
+    Test / fork := true,
+    Test / javaOptions += "--add-exports=java.base/sun.nio.ch=ALL-UNNAMED",
     Test / dependencyClasspath ++= (Compile / fullClasspath).value,
   )
   .dependsOn(commonClasses, utils)
