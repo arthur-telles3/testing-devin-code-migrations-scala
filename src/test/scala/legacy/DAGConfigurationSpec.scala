@@ -1,6 +1,6 @@
 import munit.FunSuite
 import subdomains.utils._
-import subdomains.domainB._
+import subdomains.domainB.{SubdomainOpInstance5, SubdomainOpInstance6, SubdomainOpInstance7, SubdomainOpInstance8}
 
 class DAGConfigurationSpec extends FunSuite {
   // Define 'ops' as a collection of SubdomainOp instances from domain B
