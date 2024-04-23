@@ -7,9 +7,9 @@ object SubdomainOpInstance5 extends SubdomainOp {
   val hardcodedValue: Int = 2753 // Previously randomValue
 
   override def name: String = "SubdomainOpInstance5"
-  override def inputs: Set[String] = Set("SubdomainOpInstance4") // Reference to SubdomainOpInstance4 as an input using hardcoded name
+  override def inputs: Set[String] = Set() // No inputs as this is a root operation within domain B
   override def query(inputs: Map[String, DataFrame]): DataFrame = {
-    // Direct reference to SubdomainOpInstance4 removed
+    // Implementation for query
     SparkSession.builder().getOrCreate().emptyDataFrame
   }
   override def metadata: Metadata = {
