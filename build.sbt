@@ -57,6 +57,7 @@ lazy val domainB = (project in file("subdomains/domainB"))
 lazy val domainC = (project in file("subdomains/domainC"))
   .settings(
     name := "Domain C",
+    Compile / scalaSource := baseDirectory.value / "src" / "main" / "scala",
     libraryDependencies ++= Seq(
       "org.scalatest" %% "scalatest" % "3.2.9" % Test,
       "org.apache.spark" %% "spark-core" % "3.5.1" % Provided,
@@ -69,6 +70,7 @@ lazy val domainC = (project in file("subdomains/domainC"))
 lazy val domainD = (project in file("subdomains/domainD"))
   .settings(
     name := "Domain D",
+    Compile / scalaSource := baseDirectory.value / "src" / "main" / "scala",
     libraryDependencies ++= Seq(
       "org.scalatest" %% "scalatest" % "3.2.9" % Test,
       "org.apache.spark" %% "spark-core" % "3.5.1" % Provided,
@@ -81,6 +83,7 @@ lazy val domainD = (project in file("subdomains/domainD"))
 lazy val domainE = (project in file("subdomains/domainE"))
   .settings(
     name := "Domain E",
+    Compile / scalaSource := baseDirectory.value / "src" / "main" / "scala",
     libraryDependencies ++= Seq(
       "org.scalatest" %% "scalatest" % "3.2.9" % Test,
       "org.apache.spark" %% "spark-core" % "3.5.1" % Provided,
