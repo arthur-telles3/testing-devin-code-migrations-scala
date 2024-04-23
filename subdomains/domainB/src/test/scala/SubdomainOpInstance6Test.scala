@@ -4,6 +4,7 @@ import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 import subdomains.utils.{SubdomainOp, Metadata, RunConfigurations}
 import org.apache.spark.sql.SparkSession
+import subdomains.domainB.SubdomainOpInstance6
 
 class SubdomainOpInstance6Test extends AnyFlatSpec with Matchers {
   "SubdomainOpInstance6" should "have the correct name" in {
