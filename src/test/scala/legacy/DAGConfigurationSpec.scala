@@ -9,10 +9,10 @@ import subdomains.domainE.{SubdomainOpInstance17, SubdomainOpInstance18, Subdoma
 class DAGConfigurationSpec extends FunSuite {
   // Define 'ops' as a collection of SubdomainOp instances from all domains
   val ops: Seq[SubdomainOp] = Seq(
-    new SubdomainOpInstance1(),
-    new SubdomainOpInstance2(),
-    new SubdomainOpInstance3(),
-    new SubdomainOpInstance4(),
+    SubdomainOpInstance1,
+    SubdomainOpInstance2,
+    SubdomainOpInstance3,
+    SubdomainOpInstance4,
     new SubdomainOpInstance5(),
     new SubdomainOpInstance6(),
     new SubdomainOpInstance7(),
