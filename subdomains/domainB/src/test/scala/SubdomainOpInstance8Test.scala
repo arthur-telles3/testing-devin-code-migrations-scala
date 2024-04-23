@@ -8,7 +8,7 @@ import subdomains.domainB.SubdomainOpInstance8
 
 class SubdomainOpInstance8Test extends AnyFlatSpec with Matchers {
   "SubdomainOpInstance8" should "have the correct name" in {
-    SubdomainOpInstance8.name should be("SubdomainOpInstance8")
+    SubdomainOpInstance8.name should be("subdomainB-op-instance-8")
   }
 
   it should "return an empty DataFrame on query" in {
