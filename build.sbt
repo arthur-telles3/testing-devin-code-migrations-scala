@@ -39,6 +39,8 @@ lazy val domainA = (project in file("subdomains/domainA"))
 lazy val domainB = (project in file("subdomains/domainB"))
   .settings(
     name := "Domain B",
+    Compile / scalaSource := baseDirectory.value / "src" / "main" / "scala",
+    Test / scalaSource := baseDirectory.value / "src" / "test" / "scala",
     libraryDependencies ++= Seq(
       "org.scalatest" %% "scalatest" % "3.2.9" % Test,
       "org.apache.spark" %% "spark-core" % "3.5.1" % Provided,
