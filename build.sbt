@@ -32,7 +32,8 @@ lazy val domainA = (project in file("subdomains/domainA"))
       "org.scalatest" %% "scalatest" % "3.2.9" % Test,
       "org.apache.spark" %% "spark-core" % "3.5.1" % Provided,
       "org.apache.spark" %% "spark-sql" % "3.5.1" % Provided
-    )
+    ),
+    Test / dependencyClasspath ++= (Compile / compileIncremental).value,
   )
   .dependsOn(commonClasses, utils)
 
@@ -49,6 +50,7 @@ lazy val domainB = (project in file("subdomains/domainB"))
     Test / classLoaderLayeringStrategy := ClassLoaderLayeringStrategy.AllLibraryJars,
     Test / fork := true,
     Test / javaOptions += "--add-exports=java.base/sun.nio.ch=ALL-UNNAMED",
+    Test / dependencyClasspath ++= (Compile / compileIncremental).value,
   )
   .dependsOn(commonClasses, utils)
 
@@ -59,7 +61,8 @@ lazy val domainC = (project in file("subdomains/domainC"))
       "org.scalatest" %% "scalatest" % "3.2.9" % Test,
       "org.apache.spark" %% "spark-core" % "3.5.1" % Provided,
       "org.apache.spark" %% "spark-sql" % "3.5.1" % Provided
-    )
+    ),
+    Test / dependencyClasspath ++= (Compile / compileIncremental).value,
   )
   .dependsOn(commonClasses, utils)
 
@@ -70,7 +73,8 @@ lazy val domainD = (project in file("subdomains/domainD"))
       "org.scalatest" %% "scalatest" % "3.2.9" % Test,
       "org.apache.spark" %% "spark-core" % "3.5.1" % Provided,
       "org.apache.spark" %% "spark-sql" % "3.5.1" % Provided
-    )
+    ),
+    Test / dependencyClasspath ++= (Compile / compileIncremental).value,
   )
   .dependsOn(commonClasses, utils)
 
@@ -81,7 +85,8 @@ lazy val domainE = (project in file("subdomains/domainE"))
       "org.scalatest" %% "scalatest" % "3.2.9" % Test,
       "org.apache.spark" %% "spark-core" % "3.5.1" % Provided,
       "org.apache.spark" %% "spark-sql" % "3.5.1" % Provided
-    )
+    ),
+    Test / dependencyClasspath ++= (Compile / compileIncremental).value,
   )
   .dependsOn(commonClasses, utils)
 
