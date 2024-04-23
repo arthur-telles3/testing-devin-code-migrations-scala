@@ -14,21 +14,102 @@ lazy val commonClasses = (project in file("platform/common-classes"))
       "org.apache.spark" %% "spark-sql" % "3.5.1" % Provided
     )
   )
+  .dependsOn(utils)
 
-lazy val domainA = (project in file("subdomains/domain-A"))
+lazy val utils = (project in file("subdomains/utils"))
+  .settings(
+    name := "Utils",
+    libraryDependencies ++= Seq(
+      "org.scalatest" %% "scalatest" % "3.2.9" % Test
+    )
+  )
+
+lazy val domainA = (project in file("subdomains/domainA"))
   .settings(
     name := "Domain A",
+    Compile / scalaSource := baseDirectory.value / "src" / "main" / "scala",
+    libraryDependencies ++= Seq(
+      "org.scalatest" %% "scalatest" % "3.2.9" % Test,
+      "org.apache.spark" %% "spark-core" % "3.5.1" % Provided,
+      "org.apache.spark" %% "spark-sql" % "3.5.1" % Provided
+    ),
+    Test / dependencyClasspath ++= (Compile / fullClasspath).value,
+  )
+  .dependsOn(commonClasses, utils)
+
+lazy val domainB = (project in file("subdomains/domainB"))
+  .settings(
+    name := "Domain B",
+    Compile / scalaSource := baseDirectory.value / "src" / "main" / "scala",
+    Test / scalaSource := baseDirectory.value / "src" / "test" / "scala",
+    libraryDependencies ++= Seq(
+      "org.scalatest" %% "scalatest" % "3.2.9" % Test,
+      "org.apache.spark" %% "spark-core" % "3.5.1" % Provided,
+      "org.apache.spark" %% "spark-sql" % "3.5.1" % Provided
+    ),
+    Test / classLoaderLayeringStrategy := ClassLoaderLayeringStrategy.AllLibraryJars,
+    Test / fork := true,
+    Test / javaOptions += "--add-exports=java.base/sun.nio.ch=ALL-UNNAMED",
+    Test / dependencyClasspath ++= (Compile / fullClasspath).value,
+  )
+  .dependsOn(commonClasses, utils)
+
+lazy val domainC = (project in file("subdomains/domainC"))
+  .settings(
+    name := "Domain C",
+    Compile / scalaSource := baseDirectory.value / "src" / "main" / "scala",
+    libraryDependencies ++= Seq(
+      "org.scalatest" %% "scalatest" % "3.2.9" % Test,
+      "org.apache.spark" %% "spark-core" % "3.5.1" % Provided,
+      "org.apache.spark" %% "spark-sql" % "3.5.1" % Provided
+    ),
+    Test / classLoaderLayeringStrategy := ClassLoaderLayeringStrategy.AllLibraryJars,
+    Test / fork := true,
+    Test / javaOptions += "--add-exports=java.base/sun.nio.ch=ALL-UNNAMED",
+    Test / dependencyClasspath ++= (Compile / fullClasspath).value,
+  )
+  .dependsOn(commonClasses, utils)
+
+lazy val domainD = (project in file("subdomains/domainD"))
+  .settings(
+    name := "Domain D",
+    Compile / scalaSource := baseDirectory.value / "src" / "main" / "scala",
+    libraryDependencies ++= Seq(
+      "org.scalatest" %% "scalatest" % "3.2.9" % Test,
+      "org.apache.spark" %% "spark-core" % "3.5.1" % Provided,
+      "org.apache.spark" %% "spark-sql" % "3.5.1" % Provided
+    ),
+    Test / dependencyClasspath ++= (Compile / fullClasspath).value,
+  )
+  .dependsOn(commonClasses, utils)
+
+lazy val domainE = (project in file("subdomains/domainE"))
+  .settings(
+    name := "Domain E",
+    Compile / scalaSource := baseDirectory.value / "src" / "main" / "scala",
+    libraryDependencies ++= Seq(
+      "org.scalatest" %% "scalatest" % "3.2.9" % Test,
+      "org.apache.spark" %% "spark-core" % "3.5.1" % Provided,
+      "org.apache.spark" %% "spark-sql" % "3.5.1" % Provided
+    ),
+    Test / dependencyClasspath ++= (Compile / fullClasspath).value,
+  )
+  .dependsOn(commonClasses, utils)
+
+lazy val app = (project in file("subdomains/app"))
+  .settings(
+    name := "Application",
     libraryDependencies ++= Seq(
       "org.scalatest" %% "scalatest" % "3.2.9" % Test,
       "org.apache.spark" %% "spark-core" % "3.5.1" % Provided,
       "org.apache.spark" %% "spark-sql" % "3.5.1" % Provided
     )
   )
-  .dependsOn(commonClasses)
+  .dependsOn(domainA, domainB, domainC, domainD, domainE)
 
 lazy val root = (project in file("."))
-  .aggregate(commonClasses, domainA)
-  .dependsOn(commonClasses)
+  .aggregate(commonClasses, domainA, domainB, domainC, domainD, domainE, utils, app)
+  .dependsOn(commonClasses, utils, domainA % "test->test", domainB % "test->test", domainC % "test->test", domainD % "test->test", domainE % "test->test")
   .settings(
     name := "Testing Devin Code Migrations Scala",
     libraryDependencies ++= Seq(
