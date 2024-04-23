@@ -24,7 +24,7 @@ class DAGConfigurationSpec extends FunSuite {
       recStack.add(op.name)
 
       val result = op.inputs.exists { input =>
-        ops.exists(_.name == input.name) && isCyclic(ops.find(_.name == input.name).get)
+        ops.exists(_.name == input) && isCyclic(ops.find(_.name == input).get)
       }
       recStack.remove(op.name)
       result
@@ -36,7 +36,7 @@ class DAGConfigurationSpec extends FunSuite {
 
   test("SubdomainOp inputs must exist in the DAG") {
     val opNames = ops.map(_.name).toSet
-    val inputsExist = ops.forall(op => op.inputs.forall(input => opNames.contains(input.name)))
+    val inputsExist = ops.forall(op => op.inputs.forall(input => opNames.contains(input)))
 
     assert(inputsExist, "All SubdomainOp inputs must exist in the DAG")
   }
