@@ -1,12 +1,12 @@
 package subdomains.domainB
 import org.apache.spark.sql.{DataFrame, SparkSession}
-import subdomains.utils.{SubdomainOp, Input, Metadata, RunConfigurations}
+import subdomains.utils.{SubdomainOp, Metadata, RunConfigurations}
 
 object SubdomainOpInstance8 extends SubdomainOp {
   val hardcodedValue: Int = 8673 // Previously randomValue
 
   override def name: String = "SubdomainOpInstance8"
-  override def inputs: Set[Input] = Set(new Input("SubdomainOpInstance7")) // Reference to SubdomainOpInstance7 as an input using hardcoded name
+  override def inputs: Set[String] = Set("SubdomainOpInstance7") // Reference to SubdomainOpInstance7 as an input using hardcoded name
   override def query(inputs: Map[String, DataFrame]): DataFrame = {
     // Direct reference to SubdomainOpInstance7 removed
     SparkSession.builder().getOrCreate().emptyDataFrame
