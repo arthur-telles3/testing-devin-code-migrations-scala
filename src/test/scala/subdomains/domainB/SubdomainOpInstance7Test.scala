@@ -1,5 +1,5 @@
 import org.scalatest.funsuite.AnyFunSuite
-import subdomains.utils.SubdomainOpInstance7
+import subdomains.domainB.SubdomainOpInstance7
 
 class SubdomainOpInstance7Test extends AnyFunSuite {
   test("SubdomainOpInstance7: name should be subdomainB-op-instance-7") {
