@@ -6,18 +6,12 @@ import org.apache.spark.sql.DataFrame
 object SubdomainOpInstance5 extends SubdomainOp {
   val hardcodedValue: Int = 2753 // Previously randomValue
 
-  override def name: String = "SubdomainOpInstance5"
+  override def name: String = "subdomainB-op-instance-5"
   override def inputs: Set[String] = Set() // No inputs as this is a root operation within domain B
   override def query(inputs: Map[String, DataFrame]): DataFrame = {
     // Implementation for query
     SparkSession.builder().getOrCreate().emptyDataFrame
   }
-  override def metadata: Metadata = {
-    // Mock implementation for metadata
-    new Metadata()
-  }
-  override def runConfigurations: RunConfigurations = {
-    // Mock implementation for runConfigurations
-    new RunConfigurations()
-  }
+  override def metadata: Metadata = Metadata.apply() // Updated to use apply method
+  override def runConfigurations: RunConfigurations = RunConfigurations.apply() // Updated to use apply method
 }

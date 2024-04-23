@@ -11,6 +11,6 @@ object SubdomainOpInstance13 extends SubdomainOp {
     // Placeholder for the actual query logic
     SparkSession.builder().getOrCreate().emptyDataFrame
   }
-  override def metadata: Metadata = new Metadata()
-  override def runConfigurations: RunConfigurations = new RunConfigurations()
+  override def metadata: Metadata = Metadata.apply() // Updated to use apply method
+  override def runConfigurations: RunConfigurations = RunConfigurations.apply() // Updated to use apply method
 }

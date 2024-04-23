@@ -5,8 +5,8 @@ import org.apache.spark.sql.SparkSession
 import subdomains.utils.{SubdomainOp, Metadata, RunConfigurations}
 
 class SubdomainOpInstance5Test extends AnyFunSuite {
-  test("SubdomainOpInstance5: name should be 'SubdomainOpInstance5'") {
-    assert(SubdomainOpInstance5.name == "SubdomainOpInstance5")
+  test("SubdomainOpInstance5: name should be 'subdomainB-op-instance-5'") {
+    assert(SubdomainOpInstance5.name == "subdomainB-op-instance-5")
   }
 
   test("SubdomainOpInstance5: query should return an empty DataFrame") {
