@@ -1,10 +1,10 @@
 import munit.FunSuite
 import subdomains.utils._
-import subdomains.domainB.{SubdomainOpInstance5, SubdomainOpInstance6, SubdomainOpInstance7, SubdomainOpInstance8}
 import subdomains.domainA.{SubdomainOpInstance1, SubdomainOpInstance2, SubdomainOpInstance3, SubdomainOpInstance4}
-import subdomains.domainC.SubdomainOpInstance9
-import subdomains.domainD.SubdomainOpInstance13
-import subdomains.domainE.SubdomainOpInstance17
+import subdomains.domainB.{SubdomainOpInstance5, SubdomainOpInstance6, SubdomainOpInstance7, SubdomainOpInstance8}
+import subdomains.domainC.{SubdomainOpInstance9, SubdomainOpInstance10, SubdomainOpInstance11, SubdomainOpInstance12}
+import subdomains.domainD.{SubdomainOpInstance13, SubdomainOpInstance14}
+import subdomains.domainE.{SubdomainOpInstance17, SubdomainOpInstance18, SubdomainOpInstance19, SubdomainOpInstance20}
 
 class DAGConfigurationSpec extends FunSuite {
   // Define 'ops' as a collection of SubdomainOp instances from all domains
