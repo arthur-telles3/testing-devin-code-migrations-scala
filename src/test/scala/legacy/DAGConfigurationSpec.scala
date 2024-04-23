@@ -1,9 +1,16 @@
 import munit.FunSuite
 import subdomains.utils._
-import platform.common_classes.SubdomainOp
-import DAG.ops
+import subdomains.domainB._
 
 class DAGConfigurationSpec extends FunSuite {
+  // Define 'ops' as a collection of SubdomainOp instances from domain B
+  val ops: Seq[SubdomainOp] = Seq(
+    new SubdomainOpInstance5(),
+    new SubdomainOpInstance6(),
+    new SubdomainOpInstance7(),
+    new SubdomainOpInstance8()
+  )
+
   test("DAG should have no cycles") {
     val visited = scala.collection.mutable.Set[String]()
     val recStack = scala.collection.mutable.Set[String]()
